@@ -14,6 +14,9 @@
 4. `main` ブランチに push すると自動で公開されます
 5. Actions が完了したら表示される URL にアクセス
 
+## PR コンフリクトの解消
+PR でコンフリクトが出た場合は、`docs/conflict-resolution.md` の手順を確認してください。
+
 ## ローカルで確認する
 ```bash
 python -m http.server 8000
