@@ -1,0 +1,211 @@
+:root {
+  color-scheme: light;
+  --bg: #f7f7fb;
+  --card: #ffffff;
+  --primary: #3b5bfd;
+  --primary-ghost: rgba(59, 91, 253, 0.1);
+  --text: #1f2430;
+  --muted: #61697c;
+  --border: #e3e6ef;
+  font-family: "Helvetica Neue", "Hiragino Sans", "Noto Sans JP", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.app {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 20px 18px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.app__header h1 {
+  margin: 6px 0 8px;
+  font-size: 2rem;
+}
+
+.app__eyebrow {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.app__lead {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 12px 30px rgba(31, 36, 48, 0.08);
+  border: 1px solid var(--border);
+}
+
+.timer__display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+#timer-label {
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+#timer-value {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.timer__controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+button {
+  border: none;
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button.primary {
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 8px 16px rgba(59, 91, 253, 0.3);
+}
+
+button.ghost {
+  background: var(--primary-ghost);
+  color: var(--primary);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.timer__presets {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 14px;
+}
+
+.timer__presets button {
+  background: #eef0ff;
+  color: var(--primary);
+  font-size: 0.9rem;
+}
+
+.timer__presets button.is-active {
+  background: var(--primary);
+  color: #fff;
+}
+
+.timer__hint {
+  text-align: center;
+  margin: 12px 0 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.goal-form {
+  display: flex;
+  gap: 10px;
+  margin: 12px 0 8px;
+}
+
+.goal-form input {
+  flex: 1;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  padding: 10px 12px;
+  font-size: 1rem;
+}
+
+.goal-form button {
+  background: var(--primary);
+  color: #fff;
+}
+
+.goal-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.goal-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f2f4ff;
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+.goal-list button {
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.steps {
+  margin: 10px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+.small {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin: 6px 0 0;
+}
+
+.app__footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 480px) {
+  .app {
+    padding: 16px 14px 32px;
+  }
+
+  #timer-value {
+    font-size: 2.5rem;
+  }
+
+  .goal-form {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>モバイル向け集中タイマー</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app__header">
+        <p class="app__eyebrow">GitHub Pages で公開できるサンプル</p>
+        <h1>ポケット集中タイマー</h1>
+        <p class="app__lead">
+          スマホで1タップ。短時間の集中と休憩を繰り返すミニタイマー。
+        </p>
+      </header>
+
+      <section class="card timer" aria-live="polite">
+        <div class="timer__display">
+          <span id="timer-label">集中</span>
+          <span id="timer-value">25:00</span>
+        </div>
+        <div class="timer__controls">
+          <button id="start-btn" class="primary">スタート</button>
+          <button id="pause-btn" class="ghost" disabled>一時停止</button>
+          <button id="reset-btn" class="ghost" disabled>リセット</button>
+        </div>
+        <div class="timer__presets">
+          <button data-minutes="15">15分</button>
+          <button data-minutes="25" class="is-active">25分</button>
+          <button data-minutes="45">45分</button>
+        </div>
+        <p class="timer__hint">終了したら3分休憩へ自動で切り替わります。</p>
+      </section>
+
+      <section class="card">
+        <h2>今日のミニ目標</h2>
+        <form id="goal-form" class="goal-form">
+          <input
+            id="goal-input"
+            type="text"
+            inputmode="text"
+            placeholder="15文字以内で入力"
+            maxlength="15"
+            required
+          />
+          <button type="submit">追加</button>
+        </form>
+        <ul id="goal-list" class="goal-list" aria-live="polite"></ul>
+        <p class="small">端末内に保存されるので、更新しても残ります。</p>
+      </section>
+
+      <section class="card">
+        <h2>使い方</h2>
+        <ol class="steps">
+          <li>集中時間を選んでスタート。</li>
+          <li>終了すると自動で3分休憩へ。</li>
+          <li>ミニ目標を入れて達成を記録。</li>
+        </ol>
+      </section>
+
+      <footer class="app__footer">
+        <p>📱 スマホでの利用を前提にしたシンプル構成です。</p>
+      </footer>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
